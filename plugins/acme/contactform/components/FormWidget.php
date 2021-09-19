@@ -2,7 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Input;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 use ValidationException;
 use Flash;
@@ -55,7 +55,7 @@ class FormWidget extends ComponentBase
     } else {
       //переменные
       $vars = [
-        'user_name' => Input::get('user_name'), 
+        'user_name' => Input::get('user_name'),
         'user_phone' => Input::get('user_phone'),
         'user_mail' => Input::get('user_mail'),
         'user_message' => Input::get('user_mail'),
@@ -74,20 +74,20 @@ class FormWidget extends ComponentBase
 
       //отправка на почту
       Mail::send('acme.contactform::mail.message', $vars, function($message) {
-          
+
           $message->to($this->getUserMail(), 'Admin Person');
           $message->subject('Сообщение с сайта');
-  
+
       });
-      
+
       if($query) {
         Flash::success('Сообщение успешно отправлено!');
       } else {
         Flash::error('Произошла ошибка!');
       }
-      
+
     }
-    
+
   }
 
 }
