@@ -1,0 +1,68 @@
+{% set rooms = __SELF__.rooms %}
+
+<section id="{{__SELF__.id}}" class="hostel" data-js-action="hostel">
+  <div class="container">
+    <h2 class="title">Наши номера</h2>
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        {% for room in rooms %}
+        <div class="hostel__tab {% if loop.index == 1 %}hostel__tab_active{% endif %}" data-id="tab-{{ loop.index }}">
+          <!-- body start -->
+          <div class="hostel__tab-body">
+            <div class="hostel__tab-title">{{room.title}}</div>
+            {% if room.price %}
+            <div class="hostel__tab-price">{{room.price|raw}} <span class="hostel__tab-currency">₽</span></div>
+            {% endif %}
+            <div class="hostel__tab-descr">
+              {{room.content|raw}}
+            </div>
+            <button class="link hostel__link" data-js-action="open-modal">Забронировать</button>
+          </div>
+          <!-- body end -->
+          <div class="hostel__tab-placeholder"></div>
+          <!-- slider start -->
+          <div data-js="hostel-slider" class="owl-carousel hostel__tab-slider">
+            {% for image in room.gallery %}
+            <div class="hostel__slide">
+              <img src="{{ image.thumb(1024, 768, {'mode': 'crop', quality: 80 }) }}" alt="{{image.title}}" class="hostel__slide-image" />
+            </div>
+            {% endfor %}
+          </div>
+          <!-- slider end -->
+
+          <!-- slider nav start -->
+          <div class="hostel__nav">
+            <button class="slider__nav-btn" data-js="hostel-slider-prev-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="slider__nav-arrow" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg>
+            </button>
+            <button class="slider__nav-btn" data-js="hostel-slider-next-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="slider__nav-arrow" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </button>
+          </div>
+          <!-- slider nav end -->
+        </div>
+        {% endfor %}
+
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="hostel__list">
+          {% for room in rooms %}
+          <div class="hostel__list-item {% if loop.index == 1 %}hostel__list-item_active{% endif %}" data-tab-id="{{ loop.index }}" data-js-action="tabs">
+            <svg xmlns="http://www.w3.org/2000/svg" class="hostel__list-ico" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            <div class="hostel__list-title">{{room.title}}</div>
+            {% if room.price %}
+            <div class="hostel__list-price">{{room.price|raw}} <span class="hostel__tab-currency">₽</span></div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+name: Hostels
+form: $/acme/hostel/models/hostel/fields.yaml
+modelClass: Acme\Hostel\Models\Hostel
+defaultRedirect: acme/hostel/hostels
+create:
+    redirect: 'acme/hostel/hostels/update/:id'
+    redirectClose: acme/hostel/hostels
+update:
+    redirect: acme/hostel/hostels
+    redirectClose: acme/hostel/hostels

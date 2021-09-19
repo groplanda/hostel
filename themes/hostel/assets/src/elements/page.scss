@@ -1,0 +1,38 @@
+.page {
+  padding: 70px 0 40px;
+
+  @media(min-width: 768px) {
+    min-height: 752px;
+    padding: 140px 0 80px;
+  }
+
+
+  &__body {
+    margin-top: 30px;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    background: #FFF;
+    padding: 30px 40px;
+
+    @media(max-width: 767px) {
+      padding: 30px 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+      @media(max-width: 767px) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__date {
+    color: $secondColor;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

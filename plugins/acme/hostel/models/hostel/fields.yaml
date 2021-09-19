@@ -1,0 +1,31 @@
+fields:
+    title:
+        label: Название
+        span: auto
+        type: text
+    price:
+        label: Цена
+        span: auto
+        type: text
+    content:
+        label: Описание
+        size: huge
+        span: full
+        type: richeditor
+    gallery:
+        label: Галерея
+        mode: image
+        prompt: Добавить
+        imageWidth: '100'
+        imageHeight: '100'
+        fileTypes: 'jpg,png,jpeg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    is_active:
+        label: 'Показать?'
+        span: auto
+        type: switch

@@ -1,0 +1,93 @@
+tabs:
+  stretch: true
+  defaultTab: Контакты
+  lazy:
+    - Контакты
+    - Общие
+  icons:
+    Контакты: icon-phone
+    Общие: icon-cogs
+
+  fields:
+    phones:
+      tab: "Контакты"
+      label: "Телефоны"
+      type: repeater
+      prompt: Добавить телефон
+      span: full
+      form:
+        fields:
+          number:
+            label: Телефон
+            type: text
+            placeholder: укажите номер
+
+    contact_mail:
+      tab: "Контакты"
+      label: "E-mail"
+      type: email
+      default: ""
+      placeholder: ""
+      span: auto
+
+    adress:
+      tab: "Контакты"
+      label: "Адрес"
+      type: text
+      default: ""
+      placeholder: ""
+      span: auto
+
+    whatsapp:
+      tab: "Контакты"
+      label: "Whatsapp"
+      type: text
+      default: ""
+      placeholder: ""
+      span: auto
+
+    viber:
+      tab: "Контакты"
+      label: "Viber"
+      type: text
+      default: ""
+      placeholder: ""
+      span: auto
+
+    instagram:
+      tab: "Контакты"
+      label: "Instagram"
+      type: text
+      default: ""
+      placeholder: ""
+      span: auto
+
+    vk:
+      tab: "Контакты"
+      label: "Vk"
+      type: text
+      default: ""
+      placeholder: ""
+      span: auto
+
+    ymap:
+      tab: "Контакты"
+      label: "Код карты"
+      type: textarea
+      size: large
+      span: full
+
+    logo:
+      tab: "Общие"
+      label: "Логотип"
+      type: mediafinder
+      mode: image
+      imageWidth: '200'
+
+    copyright:
+      tab: "Общие"
+      label: "Текст в подвале"
+      type: text
+      default: "Copyright © 2021 мини-гостиница \"Дом\""
+      placeholder: ""
+      span: full

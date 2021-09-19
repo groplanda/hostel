@@ -1,0 +1,11 @@
+{% set post =  __SELF__.post %}
+<section id="{{__SELF__.id}}" class="page">
+  <div class="container">
+    <h1 class="title page__title">{{ post.title }}</h1>
+    <a class="link page__link" href="/">На главную</a>
+    <div class="page__body">
+        {{ post.content|raw }}
+        <p class="page__date">Добавлено: {{post.updated_at}}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+name: Slides
+form: $/acme/hostel/models/slide/fields.yaml
+modelClass: Acme\Hostel\Models\Slide
+defaultRedirect: acme/hostel/slides
+create:
+    redirect: 'acme/hostel/slides/update/:id'
+    redirectClose: acme/hostel/slides
+update:
+    redirect: acme/hostel/slides
+    redirectClose: acme/hostel/slides

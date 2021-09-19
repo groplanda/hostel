@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: Id
+        type: number
+    title:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+    is_active:
+        label: Статус
+        type: switch
+        sortable: true
+    created_at:
+        label: Добавлено
+        type: date
+        sortable: true

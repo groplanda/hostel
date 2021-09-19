@@ -1,0 +1,191 @@
+@import "./fonts.scss";
+@import "./vars.scss";
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+@import "~owl.carousel2/dist/assets/owl.carousel.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  color: $primaryColor;
+  line-height: 19px;
+  background: $lightColor;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+input, button, select, textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+a {
+  color: $greenColor;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.link {
+  font-size: 18px;
+  line-height: 24px;
+  position: relative;
+
+  @media(max-width: 767px) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $greenColor;
+    border-radius: 2px;
+    transition: .4s ease;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 3px;
+    transform: scale(0);
+
+    @media(max-width: 767px) {
+      height: 1.2px;
+    }
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+.title {
+  width: 100%;
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  line-height: 1;
+  position: relative;
+
+  @media(max-width: 991px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 19px;
+    line-height: 24px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100px;
+    background-color: $secondColor;
+    bottom: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $greenColor;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+  }
+
+  &_sm {
+    font-size: 20px;
+
+    @media(max-width: 767px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &::after {
+      width: 7px;
+      height: 7px;
+      top: 6px;
+    }
+
+    &::before {
+      height: 2px;
+    }
+  }
+}
+
+.button {
+  padding: 20px 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.5s ease;
+  background-color: $secondColor;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50rem;
+  position: relative;
+
+  &:hover {
+    box-shadow: inset 0 -70px 0 0 #FFF;
+    color: #202020;
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #202020;
+    background: $lightColor;
+    box-shadow: none;
+  }
+
+  @media(max-width: 767px) {
+    padding: 15px 30px;
+    border-radius: 30rem;
+  }
+}
+
+@import "./elements/header.scss";
+@import "./elements/slider.scss";
+@import "./elements/hostel.scss";
+@import "./elements/advantages.scss";
+@import "./elements/posts.scss";
+@import "./elements/contact.scss";
+@import "./elements/footer.scss";
+@import "./elements/popup.scss";
+@import "./elements/page.scss";

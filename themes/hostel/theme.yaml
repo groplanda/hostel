@@ -1,0 +1,6 @@
+name: Hostel
+description: Hostel
+author: bardinteam
+homepage: bardinteam.ru
+code: ''
+form: config/fields.yaml

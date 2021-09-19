@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table acme_hostel_'
+    - builder_table_create_acme_hostel_.php
+1.0.3:
+    - 'Updated table acme_hostel_'
+    - builder_table_update_acme_hostel_.php
+1.0.4:
+    - 'Updated table acme_hostel_'
+    - builder_table_update_acme_hostel__2.php
+1.0.5:
+    - 'Created table acme_hostel_slide'
+    - builder_table_create_acme_hostel_slide.php
+1.0.6:
+    - 'Updated table acme_hostel_slide'
+    - builder_table_update_acme_hostel_slide.php
+1.0.7:
+    - 'Updated table acme_hostel_slide'
+    - builder_table_update_acme_hostel_slide_2.php
+1.0.8:
+    - 'Created table acme_hostel_page'
+    - builder_table_create_acme_hostel_page.php
+1.0.9:
+    - 'Updated table acme_hostel_page'
+    - builder_table_update_acme_hostel_page.php
+1.0.10:
+    - 'Updated table acme_hostel_page'
+    - builder_table_update_acme_hostel_page_2.php

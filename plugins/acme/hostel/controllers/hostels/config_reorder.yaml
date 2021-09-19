@@ -1,0 +1,4 @@
+title: Hostels
+modelClass: Acme\Hostel\Models\Hostel
+toolbar:
+    buttons: reorder_toolbar

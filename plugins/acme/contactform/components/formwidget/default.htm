@@ -1,0 +1,32 @@
+<form
+  id="{{ __SELF__.id}}"
+  data-request="{{ __SELF__ }}::onSend"
+  data-request-validate
+  data-request-flash
+  class="popup__form ajax-form">
+  <div class="popup__form-group">
+    <label class="popup__form-label">Имя</label>
+    <input type="text" name="user_name" class="popup__form-input" placeholder="Введите ваше имя" />
+    <span class="popup__form-err" data-validate-for="user_name"></span>
+  </div>
+  <div class="popup__form-group">
+    <label class="popup__form-label">Телефон</label>
+    <input type="text" name="user_phone" class="popup__form-input phone-mask" placeholder="+7(999) 999-99-99" />
+    <span class="popup__form-err" data-validate-for="user_phone"></span>
+  </div>
+  <div class="popup__form-group">
+    <label class="popup__form-checkbox">
+      <input type="checkbox" name="user_confirm" class="popup__form-checkbox-input" data-js-action="confirm-checkbox" />
+      <span class="popup__form-checkbox-el"></span>
+      <span class="popup__form-checkbox-txt">
+        Согласен с <a class="popup__form-checkbox-link" href="/privacy" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+      </span>
+    </label>
+  </div>
+  <button type="submit" class="button popup__form-button" data-attach-loading disabled data-js-action="confirm-btn">Отправить</button>
+  {% flash %}
+  <div class="alert alert-{{ type }}" data-interval="4">
+      {{ message }}
+  </div>
+  {% endflash %}
+</form>

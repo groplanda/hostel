@@ -1,0 +1,256 @@
+.hostel {
+  margin-bottom: 80px;
+
+  $root: &;
+
+  @media(max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  &__tab {
+    display: none;
+    position: relative;
+
+    &_active {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      #{$root} {
+        &__slide {opacity: 1}
+      }
+    }
+  }
+
+  &__tab-body {
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $secondColor, $alpha: .4);
+    position: absolute;
+    padding: 40px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media(max-width: 767px) {
+      padding: 20px;
+    }
+
+    @media(max-width: 575px) {
+      max-width: 100%;
+      position: inherit;
+      order: 1;
+      background: #FFF;
+    }
+  }
+
+  &__tab-title {
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 700;
+    color: $lightColor;
+
+    @media(max-width: 767px) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media(max-width: 575px) {
+      color: $primaryColor;
+      font-size: 16px;
+      line-height: 21px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__tab-price {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: $lightColor;
+
+    @media(max-width: 767px) {
+      font-size: 20px;
+    }
+
+    @media(max-width: 575px) {
+      color: $primaryColor;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__tab-currency {
+    font-size: 28px;
+
+    @media(max-width: 575px) {
+      font-size: 20px;
+    }
+  }
+
+  &__tab-descr {
+    color: $lightColor;
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 10px;
+    max-height: 252px;
+    overflow: hidden;
+
+    @media(max-width: 575px) {
+      color: $primaryColor;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__link {
+    color: $lightColor;
+    @media(max-width: 575px) {
+      color: $primaryColor;
+    }
+  }
+
+  &__tab-placeholder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #e8e8e8;
+  }
+
+  &__tab-slider {
+    @media(max-width: 575px) {
+      order: 0;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    opacity: 0;
+    transition: opacity .2s ease;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-top: 64%;
+    }
+  }
+
+  &__slide-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    transform: translateY(50%);
+    z-index: 2;
+
+    @media(max-width: 767px) {
+      right: 12px;
+    }
+  }
+
+  &__nav-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: $secondColor, $alpha: .7);
+    margin-left: 15px;
+
+    @media(max-width: 767px) {
+      width: 24px;
+      height: 24px;
+      margin-left: 12px;
+    }
+
+    &:hover {
+      background: $secondColor;
+    }
+  }
+
+  &__nav-arrow {
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+
+    @media(max-width: 767px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media(max-width: 991px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__list-item {
+    width: 100%;
+    padding: 20px 10px 10px 60px;
+    position: relative;
+    min-height: 80px;
+    cursor: pointer;
+    transition: all .2s ease;
+    margin-bottom: 1px;
+
+    &:hover, &_active {
+      background: $secondColor;
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+      #{$root} {
+        &__list-title, &__list-price, &__list-ico {
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+  &__list-ico {
+    color: $secondColor;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 14px;
+    transition: color .2s ease;
+  }
+
+  &__list-title {
+    font-size: 22px;
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+    transition: color .2s ease;
+  }
+
+  &__list-price {
+    font-size: 20px;
+    font-weight: 700;
+    transition: color .2s ease;
+  }
+
+}

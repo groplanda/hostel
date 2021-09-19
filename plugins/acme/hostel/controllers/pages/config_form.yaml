@@ -1,0 +1,10 @@
+name: Pages
+form: $/acme/hostel/models/page/fields.yaml
+modelClass: Acme\Hostel\Models\Page
+defaultRedirect: acme/hostel/pages
+create:
+    redirect: 'acme/hostel/pages/update/:id'
+    redirectClose: acme/hostel/pages
+update:
+    redirect: acme/hostel/pages
+    redirectClose: acme/hostel/pages

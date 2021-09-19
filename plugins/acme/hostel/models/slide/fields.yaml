@@ -1,0 +1,17 @@
+fields:
+    title:
+        label: Заголовок
+        span: full
+        type: text
+    slides:
+        label: Слайды
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        fileTypes: 'jpg,png,jpeg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

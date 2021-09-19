@@ -1,0 +1,25 @@
+{% set pages = __SELF__.pages %}
+<div class="posts">
+  {% for page in pages %}
+  <div class="posts__item">
+    <div class="container">
+      <div class="row posts__row">
+        <div class="col-md-6 col-lg-5 posts__col-content">
+          <div class="posts__body">
+            <div class="title posts__title">{{page.title}}</div>
+            <div class="posts__descr">
+              {{ html_limit(page.content, 150, '...') }}
+            </div>
+            <a href="{{ 'page' | page({slug: page.slug}) }}" class="link posts__link">Подробнее</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7 posts__col-image">
+          <div class="posts__image">
+            <img src="{{page.poster|media|resize(500, false, { mode: 'crop', quality: '80' })}}" alt="{{page.title}}" class="posts__picture">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

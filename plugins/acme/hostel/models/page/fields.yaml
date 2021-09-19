@@ -1,0 +1,43 @@
+fields:
+    title:
+        label: Заголовок
+        span: auto
+        type: text
+    slug:
+        label: Слаг
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    is_active:
+        label: 'Показать?'
+        span: full
+        type: switch
+tabs:
+    fields:
+        seo_title:
+            label: 'Мета заголовок'
+            span: full
+            type: text
+            tab: SEO
+        seo_description:
+            label: 'Мета описание'
+            size: small
+            span: full
+            type: textarea
+            tab: SEO
+        poster:
+            label: Фото
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            span: auto
+            type: mediafinder
+            tab: Содержимое
+        content:
+            label: Содержимое
+            size: giant
+            span: full
+            type: richeditor
+            tab: Содержимое

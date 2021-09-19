@@ -1,0 +1,5 @@
+title: 'Сортировка заявок'
+modelClass: Acme\Contactform\Models\Application
+nameFrom: user_name
+toolbar:
+    buttons: reorder_toolbar

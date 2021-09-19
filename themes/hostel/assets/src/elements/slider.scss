@@ -1,0 +1,138 @@
+.slider {
+  margin: 100px 0 80px;
+  position: relative;
+  min-height: 600px;
+
+  @media(max-width: 767px) {
+    margin: 60px 0 40px;
+  }
+
+  @media(max-width: 991px) {
+    min-height: 500px;
+  }
+
+  @media(max-width: 767px) {
+    min-height: auto;
+  }
+
+  &__entry {
+    padding: 40px 50px;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    background: #FFF;
+    z-index: 2;
+
+    @media(max-width: 767px) {
+      padding: 20px 30px;
+    }
+  }
+
+  &__entry-body {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+
+    @media(max-width: 767px) {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__body {
+    width: 100%;
+    max-width: 65%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media(max-width: 991px) {
+      max-width: 70%;
+    }
+
+    @media(max-width: 767px) {
+      max-width: 100%;
+      position: inherit;
+      margin-top: 15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+
+    @media(max-width: 991px) {
+      height: 500px;
+    }
+
+    @media(max-width: 767px) {
+      height: auto;
+
+      &::after {
+        content: "";
+        display: block;
+        padding-top: 60%;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    transform: translateY(50%);
+    z-index: 1;
+
+    @media(max-width: 767px) {
+      right: 12px;
+    }
+  }
+
+  &__nav-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: $secondColor, $alpha: .7);
+    margin-left: 15px;
+
+    @media(max-width: 767px) {
+      width: 24px;
+      height: 24px;
+      margin-left: 12px;
+    }
+
+    &:hover {
+      background: $secondColor;
+    }
+  }
+
+  &__nav-arrow {
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+
+    @media(max-width: 767px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+plugin:
+    name: 'acme.hostel::lang.plugin.name'
+    description: 'acme.hostel::lang.plugin.description'
+    author: Acme
+    icon: oc-icon-bed
+    homepage: ''
+navigation:
+    main-menu-hostel:
+        label: Номера
+        url: acme/hostel/hostels
+        icon: icon-bed
+        sideMenu:
+            side-menu-hostel:
+                label: 'Создать номер'
+                url: acme/hostel/hostels/create
+                icon: icon-plus
+            side-menu-slide:
+                label: Слайдер
+                url: acme/hostel/slides
+                icon: icon-image
+            side-menu-page:
+                label: Страницы
+                url: acme/hostel/pages
+                icon: icon-file-text-o
