@@ -180,6 +180,13 @@ img {
   }
 }
 
+.container {
+  @media(max-width: 767px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 @import "./elements/header.scss";
 @import "./elements/slider.scss";
 @import "./elements/hostel.scss";
