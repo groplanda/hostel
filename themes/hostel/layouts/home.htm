@@ -8,6 +8,10 @@ sliderName = 1
 [pagelist]
 
 [formwidget]
+
+[galleries]
+galleryName = 1
+galleryType = "slider"
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,24 +22,18 @@ sliderName = 1
 
         <!-- Content -->
         <main class="main">
-          <section class="slider">
+          {% component 'themeslider' %}
+
+          <section class="about">
             <div class="container">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 col-xl-5">
-                  <div class="slider__entry">
-                    <h1 class="title slider__title">{{this.page.title}}</h1>
-                    <div class="slider__entry-body">
-                      {% page %}
-                    </div>
-                    <a href="#!" class="link slider__link" data-js-action="open-modal">Забронировать</a>
-                  </div>
-                </div>
+              <h1 class="title about__title">{{this.page.title}}</h1>
+              <div class="about__body">
+                {% page %}
               </div>
-            </div>
-            <div class="slider__body">
-                {% component 'themeslider' %}
+              <a href="#!" class="link about__link" data-js-action="open-modal">Забронировать</a>
             </div>
           </section>
+
           {% component 'roomslist' %}
 
           <section class="advantages">
@@ -72,6 +70,8 @@ sliderName = 1
 
           {% component 'pagelist' %}
 
+          {% component 'galleries' %}
+
           <section id="contact" class="contact">
             <div class="container">
               <div class="row">
@@ -95,9 +95,8 @@ sliderName = 1
 
                     <div class="contact__item">
                       <div class="contact__item-label">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="contact__item-ico" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
-                          <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                        <svg viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg" class="contact__item-ico">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM2 7C2 4.24 4.24 2 7 2C9.76 2 12 4.24 12 7C12 9.88 9.12 14.19 7 16.88C4.92 14.21 2 9.85 2 7ZM4.5 7C4.5 5.61929 5.61929 4.5 7 4.5C7.89316 4.5 8.71848 4.9765 9.16506 5.75C9.61165 6.5235 9.61165 7.4765 9.16506 8.25C8.71848 9.0235 7.89316 9.5 7 9.5C5.61929 9.5 4.5 8.38071 4.5 7Z" fill="currentColor"/>
                         </svg>
                         Адрес:
                       </div>

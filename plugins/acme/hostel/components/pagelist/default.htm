@@ -8,7 +8,7 @@
           <div class="posts__body">
             <div class="title posts__title">{{page.title}}</div>
             <div class="posts__descr">
-              {{ html_limit(page.content, 150, '...') }}
+              {{ page.content|raw }}
             </div>
             <a href="{{ 'page' | page({slug: page.slug}) }}" class="link posts__link">Подробнее</a>
           </div>

@@ -62,6 +62,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "lightbox2": "^2.11.3",
+    "npm": "^2.2.1",
     "owl.carousel2": "^2.2.2"
   }
 }

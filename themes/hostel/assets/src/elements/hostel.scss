@@ -127,6 +127,7 @@
   }
 
   &__tab-slider {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     @media(max-width: 575px) {
       order: 0;
     }

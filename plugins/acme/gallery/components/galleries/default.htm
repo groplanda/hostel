@@ -1,0 +1,22 @@
+{% set gallery = __SELF__.gallery %}
+<div class="gallery">
+  <div class="container">
+    <div class="gallery__title title">{{ gallery.title|raw }}</div>
+    <p class="gallery__descr">{{ gallery.description|raw }}</p>
+
+    <div class="gallery__slider">
+      {% for image in gallery.gallery %}
+      {% set poster = image.thumb(380, 220, {'mode': 'crop'}) %}
+      <div class="gallery__item">
+        <a href="{{ image.path }}"
+          data-lightbox="{{__SELF__.id}}"
+          data-title="{{ image.title }}"
+          class="gallery__link">
+          <img src="{{ poster }}" alt="{{ image.title }}" class="gallery__img" />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>

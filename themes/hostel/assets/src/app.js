@@ -1,6 +1,7 @@
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 require('owl.carousel2');
+require('lightbox2/dist/js/lightbox.min.js');
 $(document).ready(function() {
 
   const homeSlider = $('[data-js="home-slider"]').owlCarousel({
@@ -17,8 +18,6 @@ $(document).ready(function() {
   $('[data-js="home-slider-next"]').click(function() {
     homeSlider.trigger('next.owl.carousel');
   })
-
-
 
   $('[data-js="hostel-slider"]').each(function(index) {
     const hostelSlider = $(this).owlCarousel({
