@@ -24,9 +24,7 @@
           <div data-js="hostel-slider" class="owl-carousel hostel__tab-slider">
             {% for image in room.gallery %}
             <div class="hostel__slide">
-              <a href="{{ image.thumb(false, false, {quality: 80 }) }}" data-lightbox="gallery-{{ loop.index }}" data-title="{{image.title}}">
-                <img src="{{ image.thumb(1024, 768, {'mode': 'crop', quality: 80 }) }}" alt="{{image.title}}" class="hostel__slide-image" />
-              </a>
+              <img src="{{ image.thumb(1024, 670, {'mode': 'crop', quality: 80 }) }}" alt="{{image.title}}" class="hostel__slide-image" />
             </div>
             {% endfor %}
           </div>
