@@ -1,7 +1,7 @@
 {% set rows = __SELF__.slides %}
 
 <div class="slider" id="{{__SELF__.id}}">
-  <h2 class="slider__title">{{rows.title}}</h2>
+  <h2 class="slider__title">{{rows.title|raw}}</h2>
 
   <div class="owl-carousel" data-js="home-slider">
     {% for row in rows.slides %}
