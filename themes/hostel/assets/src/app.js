@@ -61,14 +61,16 @@ $(document).ready(function() {
     const popup = $('[data-modal="main-modal"]');
     popup.addClass('popup_active');
     popup.fadeIn();
+    setOffset(document.body, getScrollBarWith());
     $(document.body).addClass('modal-open')
   })
 
   $('[data-js-action="close-modal"]').on("click", function() {
     const popup = $('[data-modal="main-modal"]');
+    setOffset(document.body, 0);
+    $(document.body).removeClass('modal-open');
     popup.removeClass('popup_active');
     popup.fadeOut();
-    $(document.body).removeClass('modal-open')
   })
 
   $('[data-js-action="confirm-checkbox"]').on("change", function() {
@@ -77,6 +79,44 @@ $(document).ready(function() {
     } else {
       $('[data-js-action="confirm-btn"]').prop('disabled', true);
     }
+  })
+
+  function getScrollBarWith() {
+    const documentWidth = parseInt(document.documentElement.clientWidth);
+    const windowsWidth = parseInt(window.innerWidth);
+    return windowsWidth - documentWidth;
+  }
+
+  function setOffset(elem, width) {
+    elem.style.paddingRight = `${width}px`;
+    $('.header').css({'padding-right': width + 'px'});
+  }
+
+  const anchors = document.querySelectorAll('[data-js="scroll-to"]')
+
+  for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      if (e.target.closest('[data-js-action="mobile-menu"]')) {
+        $('[data-js-action="mobile-menu"]').removeClass("mobile-nav_active");
+        $('[data-js-action="toggle-menu"]').removeClass("header__menu_active");
+        $(document.body).removeClass('modal-open');
+      }
+
+      const blockID = anchor.getAttribute('href')
+
+      document.querySelector(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    })
+  }
+
+  $('[data-js-action="toggle-menu"]').on("click", function() {
+    $(this).toggleClass("header__menu_active");
+    $('[data-js-action="mobile-menu"]').toggleClass("mobile-nav_active");
+    $(document.body).toggleClass('modal-open')
   })
 
 });

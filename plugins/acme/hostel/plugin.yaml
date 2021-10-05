@@ -10,6 +10,10 @@ navigation:
         url: acme/hostel/hostels
         icon: icon-bed
         sideMenu:
+            hostel-all:
+                label: 'Все номера'
+                url: acme/hostel/hostels
+                icon: icon-book
             side-menu-hostel:
                 label: 'Создать номер'
                 url: acme/hostel/hostels/create

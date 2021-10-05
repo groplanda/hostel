@@ -2,7 +2,7 @@ description = "Header"
 ==
 <header class="header">
   <div class="container">
-    <div class="d-flex align-items-start flex-wrap">
+    <div class="d-flex header__row flex-wrap">
       <a href="/" class="header__link">
         <img src="{{ this.theme.logo|media|resize(200, false)  }}" alt="Отель форум логотип" class="header__logo header__logo_desktop" />
         <img src="{{ 'assets/images/logo.png'|theme }}" alt="Отель форум логотип" class="header__logo header__logo_mobile" />
@@ -30,7 +30,7 @@ description = "Header"
             Адрес:
           </div>
           <div class="header__contacts-list">
-            <a href="#contact" class="header__contacts-map">{{this.theme.adress}}</a>
+            <a href="#contact" data-js="scroll-to" class="header__contacts-map">{{this.theme.adress}}</a>
           </div>
         </div>
 
@@ -81,8 +81,71 @@ description = "Header"
           </svg>
         </a>
         {% endif %}
-        <a href="mailto:{{this.theme.contact_mail}}" class="header__contacts-mail header__contacts-mail_mobile">{{this.theme.contact_mail}}</a>
       </div>
+      <button type="button" class="header__menu" data-js-action="toggle-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dash-lg header__menu-dash" viewBox="0 0 16 16">
+          <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dash-lg header__menu-dash" viewBox="0 0 16 16">
+          <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" data-js-action="mobile-menu">
+    <div class="mobile-nav__wrap">
+      <img src="{{ this.theme.logo|media|resize(200, false)  }}" alt="Отель форум логотип" class="header__logo header__logo_menu" />
+        <div class="mobile-nav__menu">
+          <a href="#about" class="mobile-nav__menu-link" data-js="scroll-to">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house-fill mobile-nav__menu-ico" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+            О нас
+          </a>
+          <a href="#rooms" class="mobile-nav__menu-link" data-js="scroll-to">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-key-fill mobile-nav__menu-ico" viewBox="0 0 16 16">
+              <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+            Номера
+          </a>
+          <a href="#advantages" class="mobile-nav__menu-link" data-js="scroll-to">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-award-fill mobile-nav__menu-ico" viewBox="0 0 16 16">
+              <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+              <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+            </svg>
+            Преимущества
+          </a>
+          <a href="#gallery" class="mobile-nav__menu-link" data-js="scroll-to">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image-fill mobile-nav__menu-ico" viewBox="0 0 16 16">
+              <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+            </svg>
+            Галерея
+          </a>
+          <a href="#contact" class="mobile-nav__menu-link" data-js="scroll-to">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo-alt-fill mobile-nav__menu-ico" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg>
+            Контакты
+          </a>
+        </div>
+        <div class="mobile-nav__contacts">
+          <div class="mobile-nav__contacts-item">
+            <div class="mobile-nav__label">Звоните</div>
+            {% for phone in this.theme.phones %}
+            <a href="tel:{{phone.number}}" class="mobile-nav__link">{{phone.number}}</a>
+            {% endfor %}
+          </div>
+          <div class="mobile-nav__contacts-item">
+            <div class="mobile-nav__label">E-mail</div>
+            <a href="mailto:{{this.theme.contact_mail}}" class="mobile-nav__link">{{this.theme.contact_mail}}</a>
+          </div>
+          <div class="mobile-nav__contacts-item">
+            <div class="mobile-nav__label">Адрес</div>
+            <a href="#contact" data-js="scroll-to" class="mobile-nav__link mobile-nav__link_address">{{this.theme.adress}}</a>
+          </div>
+        </div>
     </div>
   </div>
 </header>
