@@ -4,6 +4,8 @@ require('owl.carousel2');
 require('lightbox2/dist/js/lightbox.min.js');
 $(document).ready(function() {
 
+  $('[data-js="preloader"]').fadeOut('slow');
+
   const homeSlider = $('[data-js="home-slider"]').owlCarousel({
     loop: true,
     margin: 0,
