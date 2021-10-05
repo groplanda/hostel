@@ -187,6 +187,13 @@ img {
   }
 }
 
+.row {
+  @media(max-width: 767px) {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
 @import "./elements/header.scss";
 @import "./elements/slider.scss";
 @import "./elements/hostel.scss";
