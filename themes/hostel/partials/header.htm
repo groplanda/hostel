@@ -91,6 +91,42 @@ description = "Header"
         </svg>
       </button>
     </div>
+    {% if this.page.layout == 'home' %}
+    <nav class="header__navigation">
+      <a href="#about" class="header__navigation-link" data-js="scroll-to">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house-fill header__navigation-ico" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+          <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+        </svg>
+        О нас
+      </a>
+      <a href="#rooms" class="header__navigation-link" data-js="scroll-to">
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-key-fill header__navigation-ico" viewBox="0 0 16 16">
+          <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+        Номера
+      </a>
+      <a href="#advantages" class="header__navigation-link" data-js="scroll-to">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-award-fill header__navigation-ico" viewBox="0 0 16 16">
+          <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+          <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+        </svg>
+        Преимущества
+      </a>
+      <a href="#gallery" class="header__navigation-link" data-js="scroll-to">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image-fill header__navigation-ico" viewBox="0 0 16 16">
+          <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+        </svg>
+        Галерея
+      </a>
+      <a href="#contact" class="header__navigation-link" data-js="scroll-to">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo-alt-fill header__navigation-ico" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+        </svg>
+        Контакты
+      </a>
+    </nav>
+    {% endif %}
   </div>
 
   <div class="mobile-nav" data-js-action="mobile-menu">

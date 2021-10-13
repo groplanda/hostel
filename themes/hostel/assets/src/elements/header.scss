@@ -125,7 +125,7 @@
   &__contacts-map {
     color: $primaryColor;
     @media(max-width: 991px) {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 17px;
     }
   }
@@ -257,6 +257,61 @@
     &:last-child {
       bottom: 0;
       transform: translateY(5px);
+    }
+  }
+
+  &__navigation {
+    display: none;
+    @media(min-width: 768px) {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+
+  &__navigation-link {
+
+    @media(min-width: 768px) {
+      font-size: 18px;
+      display: flex;
+      align-items: flex-start;
+      color: $primaryColor;
+      transition: all .2s ease;
+      margin-right: 15px;
+    }
+
+    @media(min-width: 992px) {
+      font-size: 22px;
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $secondColor;
+
+      #{$root} {
+        &__navigation-ico {
+          fill: $secondColor;
+        }
+      }
+    }
+  }
+
+  &__navigation-ico {
+    fill: $primaryColor;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+
+    @media(max-width: 991px) {
+      width: 15px;
+      height: 15px;
     }
   }
 }

@@ -48,68 +48,6 @@
     }
   }
 
-  &__content {
-    display: none;
-
-    @media(min-width: 768px) {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  &__navigation {
-    @media(min-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: relative;
-      z-index: 3;
-    }
-  }
-
-
-  &__navigation-link {
-
-    @media(min-width: 768px) {
-      font-size: 18px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: flex-start;
-      color: #FFF;
-      transition: all .2s ease;
-    }
-
-    @media(min-width: 992px) {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &:hover {
-      transform: translateX(10px);
-    }
-  }
-
-  &__navigation-ico {
-    fill: #FFF;
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
-
-    @media(max-width: 991px) {
-      width: 15px;
-      height: 15px;
-    }
-  }
-
   &__title {
     color: #FFF;
     font-size: 50px;

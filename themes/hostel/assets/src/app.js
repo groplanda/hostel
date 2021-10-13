@@ -106,12 +106,10 @@ $(document).ready(function() {
         $(document.body).removeClass('modal-open');
       }
 
-      const blockID = anchor.getAttribute('href')
-
-      document.querySelector(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+      const blockID = $(anchor).attr("href");
+      const offset = $('header').height();
+      const destination = $(blockID).offset().top - offset - 20;
+      $('html, body').animate({ scrollTop: destination }, 600);
     })
   }
 
