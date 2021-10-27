@@ -7,9 +7,6 @@
         <div class="col-md-6 col-lg-5 posts__col-content">
           <div class="posts__body">
             <div class="title posts__title">{{page.title}}</div>
-            <div class="posts__descr">
-              {{ page.content|raw }}
-            </div>
             <a href="{{ 'page' | page({slug: page.slug}) }}" class="link posts__link">Подробнее</a>
           </div>
         </div>

@@ -100,7 +100,7 @@
   }
 
   &__contacts-ico {
-    color: $secondColor;
+    color: $greenColor;
     width: 20px;
     height: 20px;
     position: absolute;
@@ -190,6 +190,13 @@
       border-radius: 15px;
       margin-right: 7px;
     }
+
+    &_phone {
+      background: $greenColor;
+      @media(min-width: 768px) {
+        display: none;
+      }
+    }
   }
 
   &__social-ico {
@@ -213,6 +220,12 @@
     @media(max-width: 460px) {
       max-width: 15px;
       max-height: 15px;
+    }
+
+    &_phone {
+      color: #FFF;
+      max-width: 14px;
+      max-height: 14px;
     }
   }
 
