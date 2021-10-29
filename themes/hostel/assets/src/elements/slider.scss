@@ -1,7 +1,7 @@
 .slider {
   margin: 70px 0 80px;
   position: relative;
-  min-height: 600px;
+  min-height: 650px;
   box-shadow: 0 .5rem 2rem rgba(0,0,0,.25);
 
   @media(max-width: 767px) {
@@ -18,7 +18,7 @@
 
   &__item {
     position: relative;
-    height: 600px;
+    height: 650px;
     overflow: hidden;
     cursor: pointer;
 
@@ -44,17 +44,14 @@
       right: 0;
       bottom: 0;
       z-index: 2;
-      background: rgba($color: #000000, $alpha: .5);
+      background: rgba($color: #000000, $alpha: .4);
     }
   }
 
-  &__title {
-    color: #FFF;
-    font-size: 50px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0 15px;
     max-width: 720px;
     width: 100%;
@@ -64,10 +61,24 @@
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 3;
+  }
+
+  &__title {
+    color: #FFF;
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    @media(max-width: 767px) {
+      margin-bottom: 20px;
+    }
 
     span {
       color: $secondColor;
-      text-shadow: #000 0.02em 0.02em 0.15em;
+      text-shadow: #111 0.02em 0.02em 0.15em;
     }
 
     @media(max-width: 991px) {

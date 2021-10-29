@@ -25,16 +25,20 @@ galleryType = "slider"
         <main class="main">
           {% component 'themeslider' %}
 
+          {% component 'roomslist' %}
+
           <section id="about" class="about">
             <div class="container">
               <div class="about__body">
-                {% page %}
+                <div class="about__text">
+                  {% page %}
+                </div>
+                <div class="about__image">
+                  <img src="{{ 'assets/images/about.jpeg'|theme|resize(600, 400)  }}" alt="отель Форум" class="about__image-src" />
+                </div>
               </div>
-              <button class="button footer__button" data-js-action="open-modal">Забронировать</button>
             </div>
           </section>
-
-          {% component 'roomslist' %}
 
           <section id="advantages" class="advantages">
             <div class="container">
@@ -71,6 +75,57 @@ galleryType = "slider"
           {% component 'pagelist' %}
 
           {% component 'galleries' %}
+
+          <section class="testimonial">
+            <div class="container">
+              <h2 class="title testimonial__title">Отзывы</h2>
+              <div class="row justify-content-center align-items-stretch">
+
+                <div class="col-12 col-md-6 col-lg-4 testimonial__col">
+                  <div class="testimonial__item">
+                    <img src="{{ 'assets/images/testimonial-1.jpg'|theme|resize(60, 60)  }}" alt="отзыв Петра" class="testimonial__item-avatar" />
+                    <div class="testimonial__item-content">
+                      <div class="testimonial__item-title">Петр</div>
+                      <p class="testimonial__item-descr">
+                        Комфортный номер, демократичные цены для такого уровня!
+                        Останавливаюсь в нем уже несколько лет.
+                        Администраторы девушки большие молодцы, решают все вопросы.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 testimonial__col">
+                  <div class="testimonial__item">
+                    <img src="{{ 'assets/images/testimonial-2.jpg'|theme|resize(60, 60)  }}" alt="отзыв Александра" class="testimonial__item-avatar" />
+                    <div class="testimonial__item-content">
+                      <div class="testimonial__item-title">Александр</div>
+                      <p class="testimonial__item-descr">
+                        Отличный отель. Номера чистые, матрасы новые, полотенца по 3 штуки на гостя, новые и незастиранные.
+                        В номере телевизор, кондиционер.
+                        Завтрак входит в стоимость проживания, вкусный и достаточно плотный.
+                        Персонал вежливый и ненавязчивый.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 testimonial__col">
+                  <div class="testimonial__item">
+                    <img src="{{ 'assets/images/testimonial-3.jpg'|theme|resize(60, 60)  }}" alt="отзыв Владимира" class="testimonial__item-avatar" />
+                    <div class="testimonial__item-content">
+                      <div class="testimonial__item-title">Владимир</div>
+                      <p class="testimonial__item-descr">
+                        Чисто, красиво, отзывчатый персонал, хорошая кухня.
+                        Есть где прогуляться, хорошая парковая зона.
+                        Приеду ещё и буду рекомендовать друзьям и знакомым
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <section id="contact" class="contact">
             <div class="container">

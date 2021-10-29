@@ -2,7 +2,10 @@
 
 <div class="slider" id="{{__SELF__.id}}">
 
-  <h1 class="slider__title">{{rows.title|raw}}</h1>
+  <div class="slider__container">
+    <h1 class="slider__title">{{rows.title|raw}}</h1>
+    <button class="button footer__button" data-js-action="open-modal">Забронировать</button>
+  </div>
 
   <div class="owl-carousel" data-js="home-slider">
     {% for row in rows.slides %}
