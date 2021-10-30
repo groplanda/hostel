@@ -21,23 +21,60 @@ $(document).ready(function() {
     homeSlider.trigger('next.owl.carousel');
   })
 
-  $('[data-js="hostel-slider"]').each(function(index) {
-    const hostelSlider = $(this).owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: false,
-      items: 1
-    })
-
-    $(`[data-js="hostel-slider-prev-${index + 1}"]`).click(function() {
-      hostelSlider.trigger('prev.owl.carousel');
-    })
-
-    $(`[data-js="hostel-slider-next-${index + 1}"]`).click(function() {
-      hostelSlider.trigger('next.owl.carousel');
-    })
-
+  const hostelList = $('[data-js="hostel-list"]').owlCarousel({
+    loop: false,
+    margin: 30,
+    nav: false,
+    items: 2,
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 5
+      },
+      768 : {
+        items: 2,
+        margin: 12
+      },
+      992 : {
+        items: 2,
+        margin: 20
+      }
+    }
   })
+
+  RoomGallery();
+
+  function RoomGallery() {
+    $('[data-js="hostel-slider"]').each(function(index) {
+      const hostelSlider = $(this).owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        items: 1
+      })
+
+      $(`[data-js="hostel-slider-prev-${index + 1}"]`).click(function() {
+        hostelSlider.trigger('prev.owl.carousel');
+      })
+
+      $(`[data-js="hostel-slider-next-${index + 1}"]`).click(function() {
+        hostelSlider.trigger('next.owl.carousel');
+      })
+
+    })
+  }
+
+  let heightContentArray = [];
+
+  $('[data-js-action="content-room"]').each(function(index, item) {
+    heightContentArray.push($(item).height())
+  })
+
+  function getMaxOfArray(numArray) {
+    return Math.max.apply(null, numArray);
+  }
+  const maxContentHeight = getMaxOfArray(heightContentArray);
+  $('[data-js-action="content-room"]').css('min-height', maxContentHeight + 'px');
 
   // tabs
   const parentTabs = $('[data-js-action="hostel"]');

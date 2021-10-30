@@ -1,151 +1,45 @@
 .hostel {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 
   $root: &;
 
   @media(max-width: 767px) {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
-  &__tab {
-    display: none;
-    position: relative;
-
-    &_active {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-
-      #{$root} {
-        &__slide {opacity: 1}
-      }
-    }
-  }
-
-  &__tab-body {
-    max-width: 350px;
-    width: 100%;
+  &__list-item {
+    background: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    padding-bottom: 30px;
     height: 100%;
-    background: rgba($color: $secondColor, $alpha: .4);
-    position: absolute;
-    padding: 40px;
+    position: relative;
     z-index: 2;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    margin-bottom: 20px;
 
     @media(max-width: 767px) {
-      padding: 20px;
-    }
-
-    @media(max-width: 575px) {
-      max-width: 100%;
-      position: inherit;
-      order: 1;
-      background: #FFF;
+      padding-bottom: 20px;
     }
   }
 
-  &__tab-title {
-    margin-bottom: 30px;
-    font-size: 25px;
-    font-weight: 700;
-    color: $lightColor;
+  &__list-pictyre {
+    position: relative;
+    margin-bottom: 20px;
 
     @media(max-width: 767px) {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    @media(max-width: 575px) {
-      color: $primaryColor;
-      font-size: 16px;
-      line-height: 21px;
       margin-bottom: 15px;
     }
   }
 
-  &__tab-price {
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: $lightColor;
+  &__list-slide {
+    height: 300px;
 
     @media(max-width: 767px) {
-      font-size: 20px;
-    }
-
-    @media(max-width: 575px) {
-      color: $primaryColor;
-      font-size: 16px;
-      line-height: 19px;
-      margin-bottom: 10px;
+      height: 260px;
     }
   }
 
-  &__tab-currency {
-    font-size: 28px;
-
-    @media(max-width: 575px) {
-      font-size: 20px;
-    }
-  }
-
-  &__tab-descr {
-    color: $lightColor;
-    font-size: 16px;
-    line-height: 21px;
-    margin-bottom: 10px;
-    max-height: 252px;
-    overflow: hidden;
-
-    @media(max-width: 575px) {
-      color: $primaryColor;
-      font-size: 14px;
-      line-height: 17px;
-    }
-  }
-
-  &__link {
-    color: $lightColor;
-    @media(max-width: 575px) {
-      color: $primaryColor;
-    }
-  }
-
-  &__tab-placeholder {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #e8e8e8;
-  }
-
-  &__tab-slider {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    @media(max-width: 575px) {
-      order: 0;
-    }
-  }
-
-  &__slide {
-    position: relative;
-    opacity: 0;
-    transition: opacity .2s ease;
-
-    &::after {
-      content: "";
-      display: block;
-      padding-top: 64%;
-    }
-  }
-
-  &__slide-image {
+  &__list-image {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -154,104 +48,71 @@
     object-fit: cover;
   }
 
-  &__nav {
+  &__list-nav {
     position: absolute;
     bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
+    z-index: 1;
+    right: 20px;
     transform: translateY(50%);
-    z-index: 2;
 
     @media(max-width: 767px) {
-      right: 12px;
+      right: 10px;
+    }
+
+    .slider__nav-btn {
+      width: 32px;
+      height: 32px;
+      margin-left: 0;
     }
   }
 
-  &__nav-btn {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba($color: $secondColor, $alpha: .7);
-    margin-left: 15px;
+  &__list-body {
+    padding: 0 20px;
 
     @media(max-width: 767px) {
-      width: 24px;
-      height: 24px;
-      margin-left: 12px;
+      padding: 0 10px;
     }
-
-    &:hover {
-      background: $secondColor;
-    }
-  }
-
-  &__nav-arrow {
-    color: #FFF;
-    width: 20px;
-    height: 20px;
-
-    @media(max-width: 767px) {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    @media(max-width: 991px) {
-      margin-top: 30px;
-    }
-  }
-
-  &__list-item {
-    width: 100%;
-    padding: 20px 10px 10px 60px;
-    position: relative;
-    min-height: 80px;
-    cursor: pointer;
-    transition: all .2s ease;
-    margin-bottom: 1px;
-
-    &:hover, &_active {
-      background: $secondColor;
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-
-      #{$root} {
-        &__list-title, &__list-price, &__list-ico {
-          color: #FFF;
-        }
-      }
-    }
-  }
-
-  &__list-ico {
-    color: $secondColor;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: calc(50% - 12px);
-    left: 14px;
-    transition: color .2s ease;
   }
 
   &__list-title {
-    font-size: 22px;
-    letter-spacing: .08em;
-    margin-bottom: 8px;
-    transition: color .2s ease;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+
+    @media(max-width: 767px) {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list-content {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    @media(max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   &__list-price {
-    font-size: 20px;
+    color: $secondColor;
+    font-size: 24px;
     font-weight: 700;
-    transition: color .2s ease;
+    margin-bottom: 30px;
+
+    @media(max-width: 767px) {
+      font-size: 22px;
+    }
   }
 
+  &__list-currency {
+    font-size: 19px;
+    font-weight: 500;
+
+    @media(max-width: 767px) {
+      font-size: 16px;
+    }
+  }
 }

@@ -1,13 +1,62 @@
 {% set rooms = __SELF__.rooms %}
 
-<section id="rooms" class="hostel" data-js-action="hostel">
+
+<div id="rooms" class="hostel">
+  <div class="container">
+    <h2 class="hostel__title title">Наши номера</h2>
+    <div class="hostel__list owl-carousel" data-js="hostel-list">
+      {% for room in rooms %}
+        {% set roomIndex = loop.index %}
+        <div class="hostel__list-item">
+          <div class="hostel__list-pictyre">
+
+            <div class="hostel__list-gallery owl-carousel" data-js="hostel-slider">
+              {% for image in room.gallery %}
+              <div class="hostel__list-slide">
+                <img src="{{ image.thumb(800, 600, {'mode': 'crop', quality: 80 }) }}" alt="{{image.title}}" class="hostel__list-image" />
+              </div>
+              {% endfor %}
+            </div>
+
+            {% if room.gallery|length > 1 %}
+            <div class="hostel__list-nav">
+              <button class="slider__nav-btn" data-js="hostel-slider-prev-{{ roomIndex }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="slider__nav-arrow" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+              </button>
+              <button class="slider__nav-btn" data-js="hostel-slider-next-{{ roomIndex }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="slider__nav-arrow" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            {% endif %}
+          </div>
+          <div class="hostel__list-body">
+            <div class="hostel__list-title">{{room.title}}</div>
+            <div class="hostel__list-content" data-js-action="content-room">{{room.content|raw}}</div>
+            {% if room.price %}
+            <div class="hostel__list-price">
+              {{room.price|raw}} <span class="hostel__list-currency">руб.</span>
+            </div>
+            {% endif %}
+            <button class="button footer__button hostel__list-button" data-js-action="open-modal">Забронировать</button>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- <section id="rooms" class="hostel" data-js-action="hostel">
   <div class="container">
     <h2 class="title">Наши номера</h2>
     <div class="row">
       <div class="col-md-12 col-lg-8">
         {% for room in rooms %}
         <div class="hostel__tab {% if loop.index == 1 %}hostel__tab_active{% endif %}" data-id="tab-{{ loop.index }}">
-          <!-- body start -->
+
           <div class="hostel__tab-body">
             <div class="hostel__tab-title">{{room.title}}</div>
             {% if room.price %}
@@ -18,9 +67,9 @@
             </div>
             <button class="link hostel__link" data-js-action="open-modal">Забронировать</button>
           </div>
-          <!-- body end -->
+
           <div class="hostel__tab-placeholder"></div>
-          <!-- slider start -->
+
           <div data-js="hostel-slider" class="owl-carousel hostel__tab-slider">
             {% for image in room.gallery %}
             <div class="hostel__slide">
@@ -28,9 +77,7 @@
             </div>
             {% endfor %}
           </div>
-          <!-- slider end -->
 
-          <!-- slider nav start -->
           <div class="hostel__nav">
             <button class="slider__nav-btn" data-js="hostel-slider-prev-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="slider__nav-arrow" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -43,7 +90,7 @@
               </svg>
             </button>
           </div>
-          <!-- slider nav end -->
+
         </div>
         {% endfor %}
 
@@ -65,4 +112,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
