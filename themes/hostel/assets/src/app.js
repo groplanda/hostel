@@ -2,66 +2,75 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 require('owl.carousel2');
 require('lightbox2/dist/js/lightbox.min.js');
+require('slick-carousel');
 $(document).ready(function() {
 
   $('[data-js="preloader"]').fadeOut('slow');
 
-  const homeSlider = $('[data-js="home-slider"]').owlCarousel({
-    loop: true,
-    margin: 0,
-    nav: false,
-    items: 1
-  })
+  const homeSlider = $('[data-js="home-slider"]').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: null,
+    nextArrow: null,
+  });
 
   $('[data-js="home-slider-prev"]').click(function() {
-    homeSlider.trigger('prev.owl.carousel');
+    homeSlider.slick('slickPrev');
   })
 
   $('[data-js="home-slider-next"]').click(function() {
-    homeSlider.trigger('next.owl.carousel');
+    homeSlider.slick('slickNext');
   })
 
-  const hostelList = $('[data-js="hostel-list"]').owlCarousel({
-    loop: false,
-    margin: 30,
-    nav: false,
-    items: 2,
-    responsive : {
-      0 : {
-        items: 1,
-        margin: 5
-      },
-      768 : {
-        items: 2,
-        margin: 12
-      },
-      992 : {
-        items: 2,
-        margin: 20
+$('[data-js="hostel-list"]').slick({
+  dots: false,
+  infinite: false,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  prevArrow: null,
+  nextArrow: null,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     }
-  })
+  ]
+});
 
   RoomGallery();
 
   function RoomGallery() {
     $('[data-js="hostel-slider"]').each(function(index) {
-      const hostelSlider = $(this).owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: false,
-        items: 1
+
+      const hostelSlider = $(this).slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: null,
+        nextArrow: null,
+      });
+
+      $(`[data-js="hostel-slider-prev-${index + 1}"]`).click(function(e) {
+        hostelSlider.slick('slickPrev');
       })
 
-      $(`[data-js="hostel-slider-prev-${index + 1}"]`).click(function() {
-        hostelSlider.trigger('prev.owl.carousel');
+      $(`[data-js="hostel-slider-next-${index + 1}"]`).click(function(e) {
+        hostelSlider.slick('slickNext');
       })
-
-      $(`[data-js="hostel-slider-next-${index + 1}"]`).click(function() {
-        hostelSlider.trigger('next.owl.carousel');
-      })
-
-    })
+    });
   }
 
   let heightContentArray = [];
