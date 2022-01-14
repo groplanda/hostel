@@ -44,6 +44,15 @@
   }
 
   &__logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ea4335;
+    margin-top: 10px;
+
+    @media(max-width: 1199px) {
+      font-size: 25px;
+    }
 
     &_desktop {
       @media(max-width: 767px) {
@@ -59,8 +68,10 @@
     }
 
     &_menu {
-      max-width: 200px;
-      margin-bottom: 15px;
+      display: block;
+      margin-top: 0;
+      font-size: 35px;
+      margin-bottom: 25px;
     }
   }
 
