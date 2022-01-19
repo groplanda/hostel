@@ -85,6 +85,53 @@ $('[data-js="hostel-list"]').slick({
   const maxContentHeight = getMaxOfArray(heightContentArray);
   $('[data-js-action="content-room"]').css('min-height', maxContentHeight + 'px');
 
+  const gallerySlider = $('[data-js="gallery-slider"]').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    prevArrow: null,
+    nextArrow: null,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
+  $('[data-js="gallery-slider-prev"]').click(function() {
+    gallerySlider.slick('slickPrev');
+  })
+
+  $('[data-js="gallery-slider-next"]').click(function() {
+    gallerySlider.slick('slickNext');
+  })
+
   // tabs
   const parentTabs = $('[data-js-action="hostel"]');
 
