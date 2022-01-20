@@ -39,7 +39,7 @@
     }
 
     @media(max-width: 460px) {
-      max-width: 45px;
+      max-width: 65px;
     }
   }
 
@@ -54,25 +54,17 @@
       font-size: 25px;
     }
 
-    &_desktop {
-      @media(max-width: 767px) {
-        display: none;
-      }
-    }
-
-    &_mobile {
-      display: none;
-      @media(max-width: 767px) {
-        display: block;
-      }
-    }
-
-    &_menu {
-      display: block;
+    @media(max-width: 767px) {
+      font-size: 20px;
+      line-height: 20px;
       margin-top: 0;
-      font-size: 35px;
-      margin-bottom: 25px;
+      text-transform: uppercase;
     }
+
+    @media(max-width: 460px) {
+      text-align: center;
+    }
+
   }
 
   &__contacts {
@@ -162,7 +154,7 @@
     }
 
     @media(max-width: 460px) {
-      max-width: calc(100% - 85px);
+      max-width: calc(100% - 105px);
       justify-content: center;
     }
   }
